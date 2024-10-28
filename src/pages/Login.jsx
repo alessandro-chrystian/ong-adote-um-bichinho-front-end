@@ -17,7 +17,7 @@ const Login = () => {
         setSuccessMsg('')
         
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+            const res = await axios.post('https://ong-adote-um-bichinho-back-end.onrender.com/api/auth/login', formData);
             console.log(res.data)
             localStorage.setItem('token', res.data.token)
 

@@ -12,7 +12,7 @@ const Pets = () => {
 
     const fetchPets = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/pets');
+            const res = await axios.get('https://ong-adote-um-bichinho-back-end.onrender.com/api/pets');
             setPets(res.data);
         } catch (error) {
             console.error('Erro ao buscar pets:', error);
@@ -31,7 +31,7 @@ const Pets = () => {
     
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/pets',
+                'https://ong-adote-um-bichinho-back-end.onrender.com/api/pets',
                 newPet,
                 {
                     headers: {
@@ -50,7 +50,7 @@ const Pets = () => {
         const token = localStorage.getItem('token');
 
         try {
-            await axios.delete(`http://localhost:5000/api/pets/${petId}`, {
+            await axios.delete(`https://ong-adote-um-bichinho-back-end.onrender.com/api/pets${petId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

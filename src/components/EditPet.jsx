@@ -16,7 +16,7 @@ const EditPet = ({ pet, onUpdate, onSave, isNew }) => {
                 await onSave(petData)
             } else {
                 const response = await axios.put(
-                    `http://localhost:5000/api/pets/${pet._id}`,
+                    `https://ong-adote-um-bichinho-back-end.onrender.com/api/pets${pet._id}`,
                     petData,
                     {
                         headers: {
