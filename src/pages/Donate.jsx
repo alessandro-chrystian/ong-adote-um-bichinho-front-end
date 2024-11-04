@@ -1,9 +1,12 @@
 import React from 'react'
-import { QRCodeCanvas } from 'qrcode.react'
+import QrCode from '../assets/images/QRcode.jpg'
 
 const Donate = () => {
 
-  const pixData = '49609612000175'
+  const cnpj = '49609612000175';
+
+  // Formata a URL do Pix
+  const pixData = `00020101021126730014BR.GOV.BCB.PIX0104${cnpj}52040000BR5909Adote um Bichinho6009Rio de Janeiro62070503${cnpj}6304`;
 
   return (
     <section className='flex flex-col gap-5 mt-10'>
@@ -19,7 +22,7 @@ const Donate = () => {
         </div>
         <div className='flex justify-center flex-col items-center gap-2 text-xl bg-white p-3 border-2 border-primary shadow-lg rounded-md'>
           <h2 className='text-2xl font-bold'>Doe com PIX</h2>
-          <QRCodeCanvas value={pixData} size={200} />
+          <img src={QrCode} alt="QrCode" />
           <p><span className='font-bold'>CNPJ</span>: 49.609.612/0001-75</p>
         </div>
         <div className='w-[330px] text-center text-2xl flex flex-col justify-between mb-10 mt-4 gap-4 bg-white p-5 border-2 border-primary shadow-lg rounded-md'>
